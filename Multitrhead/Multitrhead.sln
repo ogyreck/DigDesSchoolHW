@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multitrhead", "Multitrhead.csproj", "{23E94F9F-9D4D-4D70-A4DC-5CE1EF2B322A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextCounter", "..\TextCounter\TextCounter.csproj", "{9797F9DD-DECE-44BB-90DC-D9509020C797}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23E94F9F-9D4D-4D70-A4DC-5CE1EF2B322A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23E94F9F-9D4D-4D70-A4DC-5CE1EF2B322A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23E94F9F-9D4D-4D70-A4DC-5CE1EF2B322A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23E94F9F-9D4D-4D70-A4DC-5CE1EF2B322A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9797F9DD-DECE-44BB-90DC-D9509020C797}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9797F9DD-DECE-44BB-90DC-D9509020C797}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9797F9DD-DECE-44BB-90DC-D9509020C797}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9797F9DD-DECE-44BB-90DC-D9509020C797}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {66E59F13-5B80-44AC-818D-5BF81A2F0414}
+	EndGlobalSection
+EndGlobal
