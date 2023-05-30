@@ -1,0 +1,12 @@
+D:\Project\TextCounter\bin\Debug\net6.0\TextCounter.deps.json
+D:\Project\TextCounter\bin\Debug\net6.0\TextCounter.dll
+D:\Project\TextCounter\bin\Debug\net6.0\TextCounter.pdb
+D:\Project\TextCounter\obj\Debug\net6.0\TextCounter.csproj.AssemblyReference.cache
+D:\Project\TextCounter\obj\Debug\net6.0\TextCounter.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\TextCounter\obj\Debug\net6.0\TextCounter.AssemblyInfoInputs.cache
+D:\Project\TextCounter\obj\Debug\net6.0\TextCounter.AssemblyInfo.cs
+D:\Project\TextCounter\obj\Debug\net6.0\TextCounter.csproj.CoreCompileInputs.cache
+D:\Project\TextCounter\obj\Debug\net6.0\TextCounter.dll
+D:\Project\TextCounter\obj\Debug\net6.0\refint\TextCounter.dll
+D:\Project\TextCounter\obj\Debug\net6.0\TextCounter.pdb
+D:\Project\TextCounter\obj\Debug\net6.0\ref\TextCounter.dll
