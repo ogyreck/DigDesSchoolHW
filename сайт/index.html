@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Arimo&family=Noto+Sans:wght@400;700&family=Roboto:ital,wght@0,400;0,700;1,300&display=swap" rel="stylesheet">
     <title>Мосты СПБ</title>
+    
 </head>
 <body>
     <header>
@@ -46,7 +47,7 @@
                     <p class="section-2__text">
                         Как уже неоднократно упомянуто, элементы политического процесса подвергнуты целой серии независимых исследований. Принимая во внимание показатели успешности, постоянный количественный рост и сфера нашей активности напрямую зависит от прогресса профессионального сообщества. 
                     </p>
-                    <img src="/img/most1.png" alt="most1">
+                    <img src="img/most1.png" alt="most1">
                 </div>
                 
             </div>
@@ -99,13 +100,31 @@
                                     <input type="text" placeholder="Телефон*" required class="input">
                                     <input type="text" placeholder="E-mail" class="input i-4">
                                 </div>
-                                <textarea name="messege" id="messege" cols="30" rows="10" placeholder="Сообщение"class="input i-5"style="margin: 0px; height: 139px; width: 439px;"></textarea>
+                                <textarea name="messege" id="messege" cols="30" rows="10" placeholder="Сообщение"class="input i-5"></textarea>
+                            </div>
+                            <div class="from-block3">
+                                <input type="radio" name="rad" id="rad"><label>Отметьте этот пункт если любите мосты</label>
+                                <p class="section-5__text">Выберите лучшие мосты:</p>
+                                <input type="checkbox" name="Dvor" id=""> <label for="Dvor">Дворцовый мост</label>
+                                <input type="checkbox" name="Lite" id=""><label for="Lite">Литейный мост</label>
+                                <input type="checkbox" name="Bank" id=""><label for="Lite">Банковский мост</label>
+                                
+                                <p class="section-5__text">Выберите ваш люимый мост</p>
+                                <select id="selectID" class="select-css">
+
+                                    <option value=”m1”>Дворцовый мост</option>
+                                    <option value=”m2”>Литейный мост</option>
+                                    <option value=”m3”>Банковский мост</option>
+                                    
+                                    </select>
+                                
                             </div>
                             
                             <div class="end-form">
                                 <label for="submit">Нажимая кнопку «Отправить», даю согласие на обработку персональных данных, указанных <a class="polit">Политики конфиденциальности</a></label>
                                 <input type="submit" value="Отправить" name='submit'>
                             </div>
+
                         </form>
                     </div>
                     
@@ -113,17 +132,22 @@
                 
             </div>
         </div>
+
+        <div class="section-6">
+            <div class="wrapper">
+                <h3 class="section-5__title">Вызов данных из Api</h3>
+                <div class="section-6_api-info" id="sec6">
+                    <p class="section-4__text">Нажмите на кнопку чтобы загрузить текст</p>
+                </div>
+                <button class="a-button a-button1" id="button-api">Загрузить данные</button>
+            </div>
+        </div>
     </main>
     <footer>
         <div class="wrapper">
             <div class="footer-up">
                 <a href="#" class="logo">Мосты СПБ</a>
-                <div class="footer-links">
-                    <a href="#"><img src="img/vkontakte.png" alt=""></a>
-                    <a href="#"><img src="img/facebook.png" alt=""></a>
-                    <a href="#"><img src="img/youtube.png" alt=""></a>
-                    <a href="#"><img src="img/linkedin.png" alt=""></a>
-                </div>
+                
             </div>
             <div class="footer-text">
                 <div class="blok1-f">
@@ -173,4 +197,5 @@
         </div>
     </footer>
 </body>
+<script src="main.js"></script>
 </html>
