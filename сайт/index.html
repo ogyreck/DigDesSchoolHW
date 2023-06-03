@@ -90,44 +90,7 @@
                 <div class="section-5__content">
                     <div class="section-5__block1">
                         <h3 class="section-5__title">Заказать экскурсию</h3>
-                        <form action="fakemail@gmail.com" method="post">
-                            <div class="form-block1">
-                                <input type="text" placeholder="ФИО*" required class="input i-1">
-                                <input type="text" placeholder=" Город" class="input input-2">
-                            </div>
-                            <div class="form-block2">
-                                <div class="form-block2-1">
-                                    <input type="text" placeholder="Телефон*" required class="input">
-                                    <input type="text" placeholder="E-mail" class="input i-4">
-                                </div>
-                                <textarea name="messege" id="messege" cols="30" rows="10" placeholder="Сообщение"class="input i-5"></textarea>
-                            </div>
-                            <div class="from-block3">
-                                <p class="section-5__text">Любите ли вы мосты?</p>
-                                <input type="radio" name="rad" id="rad1"><label>Да</label>
-                                <input type="radio" name="rad" id="rad2"><label>Нет</label>
-                                <p class="section-5__text">Выберите лучшие мосты:</p>
-                                <input type="checkbox" name="Dvor" id=""> <label for="Dvor">Дворцовый мост</label>
-                                <input type="checkbox" name="Lite" id=""><label for="Lite">Литейный мост</label>
-                                <input type="checkbox" name="Bank" id=""><label for="Lite">Банковский мост</label>
-                                
-                                <p class="section-5__text">Выберите ваш люимый мост</p>
-                                <select id="selectID" class="select-css">
-
-                                    <option value=”m1”>Дворцовый мост</option>
-                                    <option value=”m2”>Литейный мост</option>
-                                    <option value=”m3”>Банковский мост</option>
-                                    
-                                    </select>
-                                
-                            </div>
-                            
-                            <div class="end-form">
-                                <label for="submit">Нажимая кнопку «Отправить», даю согласие на обработку персональных данных, указанных <a class="polit">Политики конфиденциальности</a></label>
-                                <input type="submit" value="Отправить" name='submit'>
-                            </div>
-
-                        </form>
+                            <div id="root"></div>
                     </div>
                     
                 </div>
@@ -199,5 +162,9 @@
         </div>
     </footer>
 </body>
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>		 
+<script type="text/babel" src="react.js"></script>
 <script src="main.js"></script>
 </html>
