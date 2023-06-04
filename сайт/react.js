@@ -104,33 +104,29 @@ class Block3 extends React.Component{
     }
 }
 
+
+
 //Компоненты для контролов
-class InputRad extends React.Component{
-    constructor(props){
-        super(props)
-    }
-    render(){
-        return(
+const InputRad = () =>{
+    return(
         <div>
             <input type="radio" name="rad" key={this.props.id}/>
             <span>{this.props.text}</span>
         </div>
         );
     } 
-}
-class InputCheck extends React.Component{
-    constructor(props){
-        super(props)
-    }
-    render(){
-        return(
+
+
+
+const InputCheck = () =>{
+    return(
         <div>
             <input type="checkbox" name="rad" key={this.props.id} />
             <span>{this.props.text}</span>
         </div>
         );
-    } 
 }
+
 
 
 //основоной компонент
