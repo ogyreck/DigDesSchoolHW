@@ -128,6 +128,7 @@ const InputCheck = (props) =>{
 }
 
 
+
 //основоной компонент
 class FormToPage extends React.Component{
     constructor(props){
