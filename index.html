@@ -185,8 +185,9 @@ class Block1 extends React.Component{
     //Сохраниние текущего состояния формы в стейт компоненты, и отправка его в родительский компонент
     handleChange(event){
         let id = event.target.placeholder == "ФИО"? 1:2;
-        this.setState({ ["value"+id]: event.target.value });
-        this.props.sendData(this.state);	
+        
+        this.setState((prevState) =>  {return{ ["value"+id]: event.target.value}})
+        this.setState((prevState) =>  {this.props.sendData(prevState);})	
     }
     
 
@@ -217,13 +218,15 @@ class Block2 extends React.Component{
     //Сохраниние текущего состояния формы в стейт компоненты, и отправка его в родительский компонент 
     handleChange(event){
         let id = event.target.placeholder == "Телефон"? 3:4;
-        this.setState({ ["value"+id]: event.target.value });
-        this.props.sendData(this.state);	
+        
+        this.setState((prevState) =>  {return{ ["value"+id]: event.target.value}})
+        this.setState((prevState) =>  {this.props.sendData(prevState);})
     }
     //тоже саммое что и функция выше, но для textArea
     textAreaChange(event){
-        this.setState({ valueArea: event.target.value });
-        this.props.sendData(this.state);
+        
+        this.setState((prevState) =>  {return{ valueArea:event.target.value}})
+        this.setState((prevState) =>  {this.props.sendData(prevState);})
     }
 
     render(){
@@ -258,8 +261,9 @@ class Block3 extends React.Component{
     }
 
     handleChange(event){
-        this.setState({likeValue:event.target.value})
-        this.props.sendData(this.state);
+        
+        this.setState((prevState) =>  {return{ likeValue:event.target.value}})
+        this.setState((prevState) =>  {this.props.sendData(prevState);})
     }
 
     chekBoxCheker(event){
@@ -279,7 +283,7 @@ class Block3 extends React.Component{
             }
         });
 
-        this.props.sendData(this.state);
+        this.setState((prevState) =>  {this.props.sendData(prevState);})
 
         
 
@@ -327,44 +331,6 @@ class Block3 extends React.Component{
 
 
 
-class InputRad extends React.Component{
-    constructor(props){
-        super(props)
-
-        this.state = {value:""};
-        this.handleChange = this.handleChange.bind(this);
-    }
-
-    handleChange(event){
-        
-        this.setState({ value: event.target });
-        this.props.sendData(this.state);
-        
-    }
-    render(){
-        return(
-            <div>
-            <input type="radio" name="rad" key={props.id} onChange={this.handleChange}/>
-            <span>{props.text}</span>
-        </div>
-        );
-    }
-
-}
-
-//Компоненты для контролов
-
-
-
-const InputCheck = (props) =>{
-    return(
-        <div>
-            <input type="checkbox" name="rad" key={props.id} />
-            <span>{props.text}</span>
-        </div>
-        );
-}
-
 
 
 //основоной компонент
@@ -396,8 +362,6 @@ class FormToPage extends React.Component{
         Любите ли вы мосты: ${this.state.likeValue},
         Лучшие мосты: ${this.state.checkBox.join(", ")},
         Ваш любимый мост: ${this.state.option}
-       
-
         `
         
         );
