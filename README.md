@@ -6,3 +6,4 @@
 - [C#. Multithreading](https://github.com/ogyreck/ReflectionHW/tree/multithreadingHw)
 - [C#. WebApi](https://github.com/ogyreck/ReflectionHW/tree/WebApiDigDes)
 - [Web разработка. Сайт-одностроничник](https://github.com/ogyreck/DigDesSchoolHW/tree/webSite)
+- [SQL. Основы](https://github.com/ogyreck/DigDesSchoolHW/tree/SQLHomeWork)
