@@ -1,6 +1,6 @@
 USE AdventureWorks2019
 
-CREATE PROCEDURE [dbo].[GetSingleMaleEmployeesBornBetweenDates]
+CREATE PROCEDURE [dbo].[GetSingleMaleEmployeesBornBetweenDates1]
 (
     @StartDate DATE,
     @EndDate DATE,
@@ -8,7 +8,7 @@ CREATE PROCEDURE [dbo].[GetSingleMaleEmployeesBornBetweenDates]
 )
 AS
 BEGIN
-    SET NOCOUNT ON;
+SET NOCOUNT ON;
 
     SELECT 
         e.BusinessEntityID,
@@ -17,7 +17,6 @@ BEGIN
         Gender, 
         BirthDate, 
         MaritalStatus
-    INTO #TempEmployees
     FROM HumanResources.Employee e
 	LEFT JOIN 
 		Person.Person person ON person.BusinessEntityID = e.BusinessEntityID
@@ -25,12 +24,8 @@ BEGIN
     AND BirthDate BETWEEN @StartDate AND @EndDate;
 
     SET @ResultCount = @@ROWCOUNT;
-
-    SELECT * FROM #TempEmployees;
-
-    DROP TABLE #TempEmployees;
 END
 
 DECLARE @count INT
-EXEC GetSingleMaleEmployeesBornBetweenDates '1980-01-01', '1990-01-01', @count OUTPUT
+EXEC GetSingleMaleEmployeesBornBetweenDates1 '1980-01-01', '1990-01-01', @count OUTPUT
 SELECT @count

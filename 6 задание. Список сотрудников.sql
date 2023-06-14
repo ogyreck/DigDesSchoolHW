@@ -1,35 +1,33 @@
-USE AdventureWorks2019
+USE AdventureWorks2019;
 
+GO  
+  if OBJECT_ID('HumanResources.EmployeeDemo') is not null
+ drop table HumanResources.EmployeeDemo 
 
-;With EmployeeHierarchy(BusinessEntityID, BirthDate, HireDate, OrganizationLevel, Depth) AS (
-	SELECT BusinessEntityID, BirthDate, HireDate, OrganizationLevel, 0 as Depth
-	FROM HumanResources.Employee 
-	WHERE OrganizationLevel IS NULL
-
-	UNION ALL
-
-	SELECT e.BusinessEntityID, e.BirthDate, e.HireDate, e.OrganizationLevel, EH.Depth +1 as Depth
-	FROM EmployeeHierarchy as EH
-	INNER JOIN HumanResources.Employee  AS e ON EH.BusinessEntityID = e.OrganizationLevel
-
-)
+ SELECT emp.BusinessEntityID AS EmployeeID,  
+  (SELECT  man.BusinessEntityID FROM HumanResources.Employee man 
+	    WHERE emp.OrganizationNode.GetAncestor(1)=man.OrganizationNode OR 
+		    (emp.OrganizationNode.GetAncestor(1) = 0x AND man.OrganizationNode IS NULL)) AS ManagerID,
+        emp.HireDate, emp.BirthDate, emp.OrganizationLevel
+INTO HumanResources.EmployeeDemo   
+FROM HumanResources.Employee emp ;
+GO
 
 SELECT 
-	CONCAT(meneger.LastName, ' ', LEFT(meneger.FirstName, 1), '.', LEFT(meneger.MiddleName, 1), '.') AS ManagerName,
-    M.HireDate AS ManagerHireDate,
-    M.BirthDate AS ManagerBirthDate,
-    CONCAT(empoly.LastName, ' ', LEFT(empoly.FirstName, 1), '.', LEFT(empoly.MiddleName, 1), '.') AS EmployeeName,
-    eh.HireDate AS EmployeeHireDate,
-	eh.BirthDate AS EmployeeBirthDate
-	
-FROM EmployeeHierarchy as eh
-Inner JOIN Person.Person meneger ON meneger.BusinessEntityID = eh.Depth
-INNER JOIN Person.Person empoly ON empoly.BusinessEntityID = eh.BusinessEntityID
-inner  JOIN EmployeeHierarchy as m ON m.BusinessEntityID = eh.Depth
-
+	CONCAT(personM.LastName, ' ', LEFT(personM.FirstName, 1), '.', LEFT(personM.MiddleName, 1), '.') AS 'Имя руководителя',
+    Mgr.HireDate AS 'Дата приема руководителя на работу', 
+	Mgr.BirthDate AS 'Дата рождения руководителя',
+	CONCAT(personE.LastName, ' ', LEFT(personE.FirstName, 1), '.', LEFT(personE.MiddleName, 1), '.') AS 'Имя сотрудника',
+    Emp.HireDate AS 'Дата приема сотрудника на работу', 
+	Emp.BirthDate AS 'Дата рождения сотрудника'
+FROM HumanResources.EmployeeDemo AS Emp  
+LEFT JOIN HumanResources.EmployeeDemo AS Mgr ON Emp.ManagerID = Mgr.EmployeeID 
+LEFT JOIN Person.Person personM ON  Mgr.EmployeeID = personM.BusinessEntityID
+LEFT JOIN Person.Person personE ON  Emp.EmployeeID = personE.BusinessEntityID 
 WHERE
-    M.BirthDate > eh.BirthDate AND
-    M.HireDate > eh.HireDate
+    Mgr.BirthDate > Emp.BirthDate AND
+    Mgr.HireDate > Emp.HireDate
 		
-order by eh.Depth, meneger.LastName, empoly.LastName
+ORDER BY emp.OrganizationLevel, personM.LastName,personE.LastName  
+
 
